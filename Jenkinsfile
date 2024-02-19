@@ -31,6 +31,7 @@ pipeline {
                 steps {
                     script{
                         sh '''
+                        cd terraform
                         terraform plan
                         '''
 
