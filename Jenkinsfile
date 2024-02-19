@@ -9,7 +9,7 @@ pipeline {
             stage('Deploy') {
                 steps {
                     script{
-                        echo "Deployment"
+                        echo "Deployming version - ${params.version}"
                     }
                 }
             }
