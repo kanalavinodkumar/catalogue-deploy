@@ -27,7 +27,7 @@ resource "aws_subnet" "public" {
   availability_zone = local.az[count.index]
 
   tags = merge(var.common_tags,{
-            Name = var.public_subnet_name[count.index]
+            Name = "catalogue"
         })
 
 }

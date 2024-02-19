@@ -19,45 +19,7 @@ variable "common_tags" {
 
 variable "public_subnet_cidr" {
   type = list
-  description = "Provide 2 public subnet cidr"
-  validation {
-    condition = (
-      length(var.public_subnet_cidr) == 2
-      )
-      error_message = "CIDR list must be 2"
-  }
-}
-
-variable "public_subnet_name" {
-  type = list
-  validation {
-    condition = (
-      length(var.public_subnet_name) == 2
-      )
-      error_message = "Subnet name list must be 2"
-  }
-}
-
-
-variable "private_subnet_cidr" {
-  type = list
-  description = "Provide 2 private subnet cidr"
-  validation {
-    condition = (
-      length(var.private_subnet_cidr) == 2
-      )
-      error_message = "CIDR list must be 2"
-  }
-}
-
-variable "private_subnet_name" {
-  type = list
-  validation {
-    condition = (
-      length(var.private_subnet_name) == 2
-      )
-      error_message = "Subnet name list must be 2"
-  }
+  default = "10.12.0.0/16"
 }
 
 
