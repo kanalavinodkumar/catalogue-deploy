@@ -13,6 +13,30 @@ pipeline {
                     }
                 }
             }
+
+            stage('Init') {
+                steps {
+                    script{
+                        echo "Deployming version - ${params.version}"
+                        sh '''
+                        cd terraform
+                        terraform init -reconfigure
+                        '''
+
+                    }
+                }
+            }
+
+            stage('Plan') {
+                steps {
+                    script{
+                        sh '''
+                        terraform plan
+                        '''
+
+                    }
+                }
+            }
         }
 
     post{
