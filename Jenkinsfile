@@ -38,6 +38,18 @@ pipeline {
                     }
                 }
             }
+
+            stage('Apply') {
+                steps {
+                    script{
+                        sh '''
+                        cd terraform
+                        terraform apply -auto-approve
+                        '''
+
+                    }
+                }
+            }
         }
 
     post{
